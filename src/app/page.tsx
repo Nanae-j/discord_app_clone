@@ -1,11 +1,12 @@
+import Chat from './components/chat/Chat';
 import Sidebar from './components/sidebar/Sidebar';
-import styles from './page.module.scss';
+import './page.scss';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className="page">
       <Sidebar />
-      {/* <Home /> */}
+      <Chat />
     </div>
   );
 }
