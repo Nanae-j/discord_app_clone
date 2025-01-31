@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className="sidebarLeft">
         <div className="serverIcon">
           <Image
-            src="/bs-logo_icon_black.jpg"
+            src="/discordIcon.png"
             alt="サーバーアイコン"
             width={100}
             height={100}

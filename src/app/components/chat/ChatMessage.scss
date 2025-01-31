@@ -23,6 +23,11 @@
   .messageInfo {
     padding: 20px 20px 20px 10px;
 
+    p {
+      margin: 0;
+      margin-top: 10px;
+    }
+
     .messageInfoBox {
       display: flex;
       align-items: center;
