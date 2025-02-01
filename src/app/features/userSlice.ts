@@ -5,7 +5,7 @@ const initialState: InitialUserState = {
   user: null,
 };
 
-export const useSlice = createSlice({
+export const userSlice = createSlice({
   name: 'user',
   initialState, //initialState: initialStateの意
   reducers: {
@@ -18,4 +18,6 @@ export const useSlice = createSlice({
   },
 });
 
-export default useSlice.reducer;
+// console.log(userSlice);
+
+export default userSlice.reducer;
