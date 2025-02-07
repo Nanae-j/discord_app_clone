@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import './Sidebar.scss';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -8,14 +6,25 @@ import SidebarChannel from './SidebarChannel';
 import MicIcon from '@mui/icons-material/Mic';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import SettingsIcon from '@mui/icons-material/Settings';
-import { auth } from '@/app/firebase';
+import { auth, db } from '@/app/firebase';
 import { useAppSelector } from '@/lib/hooks';
 import useCollection from '@/hooks/useCollection';
+import { addDoc, collection } from 'firebase/firestore';
 
 const Sidebar = () => {
   const user = useAppSelector((state) => state.user.user);
 
   const { documents: channels } = useCollection('channels');
+
+  const addChannel = async () => {
+    const channelName: string | null = prompt('新しいチャンネルを作成します');
+
+    if (channelName) {
+      await addDoc(collection(db, 'channels'), {
+        channelName: channelName,
+      });
+    }
+  };
   return (
     <div className="sidebar">
       {/* SidebarLeft */}
@@ -50,7 +59,7 @@ const Sidebar = () => {
               <ExpandMoreIcon />
               <h4>プログラミングチャンネル</h4>
             </div>
-            <AddIcon className="sidebarAddIcon" />
+            <AddIcon className="sidebarAddIcon" onClick={() => addChannel()} />
           </div>
 
           <div className="sidebarChannelList">
