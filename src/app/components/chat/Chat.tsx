@@ -6,66 +6,23 @@ import GifIcon from '@mui/icons-material/Gif';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import ChatMessage from './ChatMessage';
 import { useAppSelector } from '@/lib/hooks';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   addDoc,
   collection,
   CollectionReference,
   DocumentData,
-  DocumentReference,
-  onSnapshot,
-  orderBy,
-  query,
   serverTimestamp,
-  Timestamp,
 } from 'firebase/firestore';
 import { db } from '@/app/firebase';
-
-interface Messages {
-  timestamp: Timestamp;
-  message: string;
-  user: {
-    uid: string;
-    photo: string;
-    email: string;
-    displayName: string;
-  };
-}
+import useSubCollection from '@/hooks/useSubCollection';
 
 const Chat = () => {
   const [inputText, setInputText] = useState<string>('');
-  const [messages, setMessages] = useState<Messages[]>([]);
-
-  const channelName = useAppSelector((state) => state.channel.channelName);
   const channelId = useAppSelector((state) => state.channel.channelId);
+  const channelName = useAppSelector((state) => state.channel.channelName);
   const user = useAppSelector((state) => state.user.user);
-  // console.log(channelName);
-
-  useEffect(() => {
-    const collectionRef = collection(
-      db,
-      'channels',
-      String(channelId),
-      'messages',
-    );
-
-    const collectionRefOrderBy = query(
-      collectionRef,
-      orderBy('timestamp', 'desc'),
-    );
-
-    onSnapshot(collectionRefOrderBy, (snapshot) => {
-      const results: Messages[] = [];
-      snapshot.docs.forEach((doc) => {
-        results.push({
-          timestamp: doc.data().timestamp,
-          message: doc.data().message,
-          user: doc.data().user,
-        });
-      });
-      setMessages(results);
-    });
-  }, [channelId]);
+  const { subDocuments: messages } = useSubCollection('channels', 'messages');
 
   const sendMessage = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -75,17 +32,13 @@ const Chat = () => {
     const collectionRef: CollectionReference<DocumentData, DocumentData> =
       collection(db, 'channels', String(channelId), 'messages');
 
-    const docRef: DocumentReference<DocumentData> = await addDoc(
-      collectionRef,
-      {
-        message: inputText,
-        timestamp: serverTimestamp(),
-        user: user,
-      },
-    );
+    await addDoc(collectionRef, {
+      message: inputText,
+      timestamp: serverTimestamp(),
+      user: user,
+    });
 
     setInputText('');
-    // console.log(docRef);
   };
 
   return (
