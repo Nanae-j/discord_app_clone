@@ -5,12 +5,24 @@
 <div style="display: inline">
 
   <!-- フロントエンドのフレームワーク一覧 -->
-  <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=for-the-badge">
+  <a href="https://nodejs.org/ja">
+  <img src="https://img.shields.io/badge/-Node.js-000000.svg?logo=node.js&style=for-the-badge">
+  </a>
+  <a href="https://nextjs.org/">
   <img src="https://img.shields.io/badge/-Next.js-blue.svg?logo=next.js&style=for-the-badge">
+  </a>
   <!-- フロントエンドの言語 -->
+  <a href="http://ja.react.dev/">
+  <img src="https://img.shields.io/badge/-React-23272f.svg?logo=react&style=for-the-badge">
+  </a>
+  <a href="https://www.typescriptlang.org/">
   <img src="https://img.shields.io/badge/-Typescript-FFF.svg?logo=typescript&style=for-the-badge">
+  </a>
+  
   <!-- ミドルウェア -->
+  <a href="https://firebase.google.com/?hl=ja">
   <img src="https://img.shields.io/badge/-Firebase-FFCA28.svg?logo=firebase&style=for-the-badge">
+  </a>
 
 </div>
 
