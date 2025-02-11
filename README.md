@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div id="top"></div>
 
-## Getting Started
+## 使用技術一覧
 
-First, run the development server:
+<div style="display: inline">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  <!-- フロントエンドのフレームワーク一覧 -->
+  <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Next.js-blue.svg?logo=next.js&style=for-the-badge">
+  <!-- フロントエンドの言語 -->
+  <img src="https://img.shields.io/badge/-Typescript-FFF.svg?logo=typescript&style=for-the-badge">
+  <!-- ミドルウェア -->
+  <img src="https://img.shields.io/badge/-Firebase-FFCA28.svg?logo=firebase&style=for-the-badge">
+
+</div>
+
+#### 使用ライブラリ
+<div>
+  <!-- 使用ライブラリ -->
+  <p><a href="https://mui.com/material-ui/material-icons/">MUI Material icons</a></p>
+  <p><a href="https://redux.js.org/">Redux</a></p>
+  <p><a href="https://sass-lang.com/">Sass</a></p>
+  
+</div>
+
+
+## 目次
+
+1. [プロジェクトについて](#プロジェクトについて)
+2. [環境](#環境)
+3. [ディレクトリ構成](#ディレクトリ構成)
+4. [開発環境構築](#開発環境構築)
+
+
+<!-- プロジェクトの概要を記載 -->
+
+## プロジェクトについて
+
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+
+
+<!-- プロジェクトの環境を記載 -->
+
+## 環境
+
+<!-- 言語、フレームワーク、ミドルウェア、インフラの一覧とバージョンを記載 -->
+
+| 言語・フレームワーク  | バージョン |
+| --------------------- | ---------- |
+| Node.js               | 18.20.4    |
+| Next.js               | 14.0.0    |
+| React                 | 18.2.0     |
+
+その他のパッケージのバージョンは package.json を参照してください
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+
+## ディレクトリ構成
+
+```
+.
+├── .firebase
+├── .firebaserc
+├── README.md
+├── eslint.config.mjs
+├── firebase.json
+├── next-env.d.ts
+├── next.config.js
+├── out
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── StoreProvider.tsx
+│   │   ├── Types.ts
+│   │   ├── components
+│   │   ├── favicon.ico
+│   │   ├── firebase.ts
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.scss
+│   │   └── page.tsx
+│   ├── hooks
+│   │   ├── useCollection.tsx
+│   │   └── useSubCollection.tsx
+│   └── lib
+│       ├── features
+│       ├── hooks.ts
+│       └── store.ts
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+outディレクトリ内部(公開用ディレクトリ)
+```
+.
+├── 404.html
+├── _next
+├── bs-logo_icon_black.jpg
+├── discordIcon.png
+├── favicon.ico
+├── index.html
+└── index.txt
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p align="right">(<a href="#top">トップへ</a>)</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 開発環境構築
 
-To learn more about Next.js, take a look at the following resources:
+In the project directory, you can run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### `npm install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 動作確認
 
-## Deploy on Vercel
+#### `npm run dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
