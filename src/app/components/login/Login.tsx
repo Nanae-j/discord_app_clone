@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import './Login.scss';
 import { Button } from '@mui/material';
 import { signInWithPopup } from 'firebase/auth';
@@ -13,7 +12,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="loginLogo">
-        <Image priority src="/discordIcon.png" alt="" width={50} height={50} />
+        <img src="/discordIcon.png" alt="" />
       </div>
 
       <Button onClick={signIn}>ログイン</Button>

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import './Sidebar.scss';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
@@ -30,20 +29,10 @@ const Sidebar = () => {
       {/* SidebarLeft */}
       <div className="sidebarLeft">
         <div className="serverIcon">
-          <Image
-            src="/discordIcon.png"
-            alt="サーバーアイコン"
-            width={100}
-            height={100}
-          />
+          <img src="/discordIcon.png" alt="サーバーアイコン" />
         </div>
         <div className="serverIcon">
-          <Image
-            src="/bs-logo_icon_black.jpg"
-            alt="サーバーアイコン"
-            width={100}
-            height={100}
-          />
+          <img src="/bs-logo_icon_black.jpg" alt="サーバーアイコン" />
         </div>
       </div>
       {/* SidebarRight */}
@@ -76,11 +65,9 @@ const Sidebar = () => {
             <div className="sidebarAccount">
               <div className="sidebarAccountImageWrap">
                 {user?.photo && (
-                  <Image
+                  <img
                     src={user?.photo}
                     alt=""
-                    width={100}
-                    height={100}
                     onClick={() => auth.signOut()}
                   />
                 )}
